@@ -23,7 +23,7 @@
 
 - EnergyCalculator.java: The core application logic.
 - EnergyCalculatorTest.java: The JUnit 5 implementation utilizing ParameterizedTest.
-- testCasesEnergyCalc.csv: Externalized data source containing all BVA and Decision Table test cases.
+- testCasesEnergyCalc.csv: Externalized data source containing all test cases.
 
 ## Requirements
 
