@@ -1,5 +1,8 @@
 package com.smarthome.softwaretestingexam1;
 
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
 public class EnergyCalculator {
 
     public double calculateRebate(double kwh, boolean hasSmartDevice, boolean peakOptOut) {

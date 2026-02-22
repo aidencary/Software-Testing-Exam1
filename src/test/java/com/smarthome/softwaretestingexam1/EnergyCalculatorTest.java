@@ -4,8 +4,9 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
+import org.springframework.boot.test.context.SpringBootTest;
 
-
+@SpringBootTest
 public class EnergyCalculatorTest {
 
     private EnergyCalculator calculator;
@@ -21,9 +22,8 @@ public class EnergyCalculatorTest {
                                     boolean peakOptOut, String expectedResult, boolean isError) {
 
         if (isError) {
-            assertThrows(IllegalArgumentException.class, () -> {
-                calculator.calculateRebate(kwh, hasSmartDevice, peakOptOut);
-            }, String.format("Test Case %s Failed -- Expected an IllegalArgumentException but none was thrown.", testCase));
+            assertThrows(IllegalArgumentException.class, () ->
+                    calculator.calculateRebate(kwh, hasSmartDevice, peakOptOut), String.format("Test Case %s Failed -- Expected an IllegalArgumentException but none was thrown.", testCase));
         } else {
             double expected = Double.parseDouble(expectedResult);
             double actualResult = calculator.calculateRebate(kwh, hasSmartDevice, peakOptOut);
